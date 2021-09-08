@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/media.css">
+        <link rel="stylesheet" href="./css/behaviour.css">
+        <title>MadeiraMadeira - Experimente os móveis na sala!</title>
+    </head>
+    <body>
+        <div class="d-flex flex-column">
+            <!-- Header -->
+            <header class="custom-header-style">
+                <div class="container d-flex flex-row justify-content-between align-items-center">
+                    <!-- Logo -->
+                    <a href="https://www.madeiramadeira.com.br/">
+                        <img class="custom-logo-image" src="./img/logo.png" alt="Logo principal" />
+                    </a>
+
+                    <!-- Search input -->
+                    <label class="d-flex h-50 py-1 custom-search-label">
+                        <div class="w-100">
+                            <div class="d-flex h-100 px-2">
+                                <input class="custom-search-input w-100" autocomplete="off" placeholder="Busque aqui tudo para sua casa...">
+                                <svg class="custom-search-image" version="1.1" class="search-submit-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 27 27" style="enable-background:new 0 0 27 27; width:20px; height:20px" xml:space="preserve">
+                                    <circle cx="10.5" cy="11.1" r="9" style="fill: none; stroke: #777;stroke-width: 2;stroke-linecap: round;stroke-miterlimit: 10;"></circle>
+                                    <line x1="17.1" y1="18.1" x2="25.1" y2="26.1" style="fill: none;stroke: #777;stroke-width: 2;stroke-linecap: round;stroke-miterlimit: 10;"></line>
+                                </svg>
+                            </div>
+                        </div>
+                    </label>
+                    
+                    <!-- Whatsapp label -->
+                    <label class="d-flex flex-row align-items-center custom-whatsapp-label">
+                        <img class="custom-whatsapp-image" src="./img/whatsapp.png" alt="Contato por whatsapp" />
+                        <div class="d-flex flex-column pl-1 custom-whatsapp-text">
+                            <span>Compre pelo</span>
+                            <strong>WhatsApp</strong>
+                        </div>
+                    </label>
+
+                    <!-- Telesales label -->
+                    <label class="d-flex flex-column custom-telesales-label custom-telesales-text">
+                        <span>Televendas</span>
+                        <span class="font-weight-bold">0800 080 0099</span>
+                    </label>
+
+                    <!-- Options buttons label -->
+                    <label class="custom-options-label">
+                        <img class="custom-option-button custom-option-button-user" src="./img/user.png" alt="Login de usuário" />
+                        <img class="custom-option-button custom-option-button-favorite px-2" src="./img/favorites.png" alt="Produros favoritos" />
+                        <img class="custom-option-button" src="./img/marketcar.png" alt="Carrinho de compras" />
+                    </label>
+                </div>
+            </header>
+
+            <!-- Navbar -->
+            <nav class="custom-nav">
+                <ul class="container d-flex flex-row justify-content-between">
+                    <li class="px-3 custom-nav-item">
+                        <a class="custom-nav-item-text" href="#">Departamentos</a>
+                    </li>
+                    <li class="px-3 custom-nav-item">
+                        <a class="custom-nav-item-text" href="#">Por Ambiente</a>
+                    </li>
+                    <li class="px-3 custom-nav-item">
+                        <a class="custom-nav-item-text" href="#">Móveis</a>
+                    </li>
+                    <li class="px-3 custom-nav-item">
+                        <a class="custom-nav-item-text" href="#">Frete Grátis SP</a>
+                    </li>
+                    <li class="px-3 custom-nav-item">
+                        <a class="custom-nav-item-text" href="#">Oferta da Hora</a>
+                    </li>
+                    <li class="px-3 custom-nav-item">
+                        <a class="custom-nav-item-text" href="#">Lançamentos</a>
+                    </li>
+                    <li class="px-3 custom-nav-item">
+                        <a class="custom-nav-item-text" href="#">Central de Dicas</a>
+                    </li>
+                    <li class="px-3 custom-nav-item">
+                        <a class="custom-nav-item-text" href="#">Lojas Físicas</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main loader -->
+            <div id="function-main-loader" class="flex-column align-items-center justify-content-center custom-main-loader">
+                <div class="spinner-grow custom-main-loader-color" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <span class="custom-loader-text mt-3 text-center">Aguarde, estamos levando você até a sala de estar</span>
+            </div>
+
+            <!-- Canvas room -->
+            <canvas class="custom-scene" id="renderCanvas"></canvas>
+            <div id="function-clear-furniture" class="text-uppercase custom-clear-furniture">Remover mobília</div>
+
+            <!-- Furniture label -->
+            <div class="w-100 position-fixed fixed-bottom custom-furniture-label">
+                <!-- Furniture navbar -->
+                <nav id="function-furniture-nav" class="d-flex flex-row justify-content-between custom-furniture-nav">
+                    <ul class="d-flex flex-row justify-content-start custom-furniture-items"></ul>
+
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column align-items-center justify-content-center" id="function-bottombar-state" type="button" data-toggle="collapse" data-target="#function-collapse" aria-expanded="true" aria-controls="function-collapse">
+                            <img id="function-bottom-icon" class="custom-bottom-icon" src="./img/bottombar-state.png" />
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center ml-2 custom-modal-button" data-toggle="modal" data-target="#function-modal-state">
+                            <img id="function-modal-access" class="custom-modal-icon" src="./img/modal-access.png" />
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Furniture options -->
+                <div class="accordion" id="function-furnitures-label">
+                    <div id="function-collapse" class="collapse show custom-furnitures-label" aria-labelledby="headingOne" data-parent="#function-furnitures-label">
+                        <div id="function-furniture-options" class="px-2 py-2 custom-furniture-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Options modal -->
+        <div id="function-options-modal" class="d-flex flex-column align-items-center justify-content-center "></div>
+
+        <!-- Furniture information Modal -->
+        <div class="modal fade" id="function-more-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable custom-more-info-right" role="document">
+                <div class="modal-content custom-more-info-fill">
+                    <div class="modal-header d-flex flex-row justify-content-center">
+                        <div type="button" id="function-modal-close" class="close modal-close-button" data-dismiss="modal" aria-label="Close">
+                            <div aria-hidden="true">&times;</div>
+                        </div>
+                    </div>
+                    <div class="modal-body d-flex flex-column px-4 mt-2">
+                        <h4 id="function-furniture-title" class="text-left custom-modal-info-title">
+                            Mesa de centro Naturemoveis base dupla com vidro
+                        </h4>
+                        <img class="custom-more-info-favorite" src="./img/favorite.png">
+
+                        <span>Vendido e entregue por <strong>MadeiraMadeira</strong></span>
+                        
+                        <div class="d-flex flex-row align-items-baseline">
+                            <span class="custom-more-info-coin">R$</span>
+                            <span id="function-furniture-cost" class="custom-more-info-cost">2.461,72</span>
+                        </div>
+
+                        <p class="custom-more-info-header">Dimensões</p>
+                        <table>
+                            <tr>
+                                <td class="custom-more-info-item">Altura</td>
+                                <td id="function-furniture-height" class="custom-more-info-value">80 cm</td>
+                            </tr>
+                            <tr class="custom-more-info-filledline">
+                                <td class="custom-more-info-item">Largura</td>
+                                <td id="function-furniture-width" class="custom-more-info-value">120 cm</td>
+                            </tr>
+                            <tr>
+                                <td class="custom-more-info-item">Profundidade</td>
+                                <td id="function-furniture-depth" class="custom-more-info-value">80 cm</td>
+                            </tr>
+                        </table>
+
+                        <p class="custom-more-info-header">Características</p>
+                        <table>
+                            <tr>
+                                <td class="custom-more-info-item">Estilo</td>
+                                <td id="function-furniture-style" class="custom-more-info-value">Moderno</td>
+                            </tr>
+                            <tr class="custom-more-info-filledline">
+                                <td class="custom-more-info-item">Garantia</td>
+                                <td id="function-furniture-warranty" class="custom-more-info-value">3 meses</td>
+                            </tr>
+                            <tr>
+                                <td class="custom-more-info-item">Peso</td>
+                                <td id="function-furniture-weight" class="custom-more-info-value">45kg</td>
+                            </tr>
+                            <tr class="custom-more-info-filledline">
+                                <td class="custom-more-info-item">Sistema de Montagem</td>
+                                <td id="function-furniture-mountingsystem" class="custom-more-info-value">Parafusos</td>
+                            </tr>
+                            <tr>
+                                <td class="custom-more-info-item">Linha ou Coleção</td>
+                                <td id="function-furniture-lineorcollection" class="custom-more-info-value">Luísa</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer d-flex flex-row justify-content-around custom-more-info-buttons px-4 pb-4">
+                        <div class="flex-fill custom-more-info-add mr-2">
+                            <img class="custom-more-info-add-icon" src="./img/marketcar-button.png" >
+                            <span>Adicionar</span>
+                        </div>
+                        <div class="flex-fill custom-more-info-buy ml-2">Comprar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+        <script src="main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    </body>
+</html>

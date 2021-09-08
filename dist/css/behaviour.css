@@ -1,0 +1,10 @@
+.custom-nav-item:hover, 
+.custom-nav-item:checked {
+    background-color: var(--color-hoverblue);
+}
+
+.custom-nav-item-text:hover, 
+.custom-nav-item-text:checked {
+    color: var(--color-white);
+    text-decoration: none;
+}

@@ -1,0 +1,128 @@
+@media (max-width: 992px) {
+    body {
+        line-height: 1 !important;
+    }
+
+    header > .container {
+        max-width: none !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .custom-logo-image {
+        max-height: 1.3em;
+    }
+
+    .custom-option-button-user {
+        padding-right: 10px;
+    }
+
+    .custom-search-label, 
+    .custom-whatsapp-label, 
+    .custom-telesales-label,
+    .custom-option-button-favorite,
+    .custom-nav {
+        display: none;
+        visibility: hidden;
+        width: 0;
+    }
+
+    .custom-nav > .container {
+        max-width: none !important;
+    }
+
+    .custom-more-info-right {
+        margin-right: 8px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1600px) {
+    .custom-search-label {
+        width: 30%;
+    }
+}
+
+@media (min-width: 749px) and (max-width: 1064px) {
+    .custom-furniture-item-text::before {
+        content:"\a";
+        white-space: pre;
+    }
+
+    .custom-clear-furniture {
+        bottom: 13.9em;
+    }
+}
+
+@media (max-width: 750px) and (orientation: portrait),
+(max-width: 750px) and (orientation: landscape) {
+    .custom-furniture-item {
+        padding-left: 15x;
+        padding-right: 15px;
+    }
+    
+    .custom-furniture-item-text {
+        display: none;
+        visibility: hidden;
+    }
+
+    .custom-option-button {
+        max-height: 1.8em;
+    }
+}
+
+@media (max-width: 750px) and (orientation: landscape) {
+    .img-fluid {
+        max-width: 75% !important;
+    }
+
+    .modal-content {
+        position: absolute !important;
+    }
+    
+    .custom-more-info-right {
+        width: inherit;
+    }
+}
+
+@media (max-width: 642px) {
+    .custom-furniture-item-icon {
+        height: 2em;
+    }
+
+    .custom-furniture-item {
+        padding-right: 7px;
+        padding-left: 7px;
+    }
+
+    .custom-bottom-icon {
+        max-height: 1.2em;
+    }
+
+    .custom-modal-icon {
+        max-height: 1.9em;
+    }
+}
+
+@media (max-width: 462px) {
+    .custom-furniture-item-icon {
+        height: 1.3em;
+    }
+
+    .custom-bottom-icon {
+        max-height: 1.1em;
+    }
+
+    .custom-modal-icon {
+        max-height: 1.8em;
+    }
+
+    .custom-furniture-nav {
+        padding-right: 8px;
+    }
+}
+
+@media only screen and (max-device-width: 992px) {
+    .custom-furniture-scrollbar::-webkit-scrollbar {
+        height: 0px;
+    }
+}

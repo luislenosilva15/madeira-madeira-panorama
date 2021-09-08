@@ -1,0 +1,440 @@
+/* Colors */
+
+:root {
+    --color-white: #ffffff;
+    --color-orange: #f4831f;
+    --color-blue: #00559f;
+    --color-hoverblue: #003a6c;
+    --color-yellow: #ffB91e;
+    --color-highgray: #333333;
+    --color-mediummgray: #707070;
+    --color-lowgray: #747474;
+    --color-xlowgray: #dbdbdb;
+    --color-whatsappcolor: #22d263;
+    --color-purple: #7c57c5;
+    --color-red: #d9534f;
+}
+
+/* Selected fix */
+* {
+    user-select: none;
+}
+
+/* Blurry fix all images */
+
+img {
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Header */
+
+.container {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+}
+
+.custom-header-style {
+    background-color: var(--color-white);
+    border-bottom: 4px solid var(--color-xlowgray);
+    z-index: 3;
+}
+
+/* Logo image */
+
+.custom-logo-image {
+    max-height: 1.8em;
+}
+
+/* Search input */
+
+.custom-search-image {
+    align-self: center;
+}
+.custom-search-label {
+    width: 40%;
+    border: 1px solid var(--color-xlowgray);
+}
+
+.custom-search-input {
+    border: none;
+}
+
+/* Whatsapp label */
+
+.custom-whatsapp-label {
+    cursor: pointer;
+}
+
+.custom-whatsapp-image {
+    max-height: 1.5em;
+}
+
+.custom-whatsapp-text {
+    font-size: .9em;
+    color: var(--color-whatsappcolor);
+}
+
+/* Telesales label */
+
+.custom-telesales-text {
+    font-size: .9em;
+    color: var(--color-lowgray);
+    cursor: pointer;
+}
+
+/* Options label */
+
+.custom-option-button {
+    max-height: 2.1em;
+    cursor: pointer;
+}
+
+/* Navbar */
+
+.custom-nav {
+    background-color: var(--color-blue);
+    line-height: 2.2;
+    z-index: 3;
+}
+
+.custom-nav > .container {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.custom-nav-item {
+    background-color: var(--color-blue);
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.custom-nav-item-text {
+    color: var(--color-white);
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    width: 59px;
+}
+
+/* Furniture label */
+
+.custom-furniture-label {
+    z-index: 1;
+}
+
+/* Furniture navbar */
+
+.custom-furniture-nav {
+    line-height: 2.6;
+    border-bottom: 4px solid var(--color-orange);
+    padding-right: 15px;
+}
+
+.custom-furnitures-label {
+    background: var(--color-white);
+}
+
+.custom-furniture-item {
+    background-color: var(--color-white);
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-bottom: 4px;
+    padding-left: 14px;
+    padding-right: 14px;
+    transition: .5s all;
+}
+
+.custom-furniture-item:hover {
+    background-color: var(--color-red);
+}
+
+.custom-furniture-item-text {
+    color: var(--color-blue);
+    font-size: 14px;
+}
+
+.custom-furniture-item-icon {
+    height: 2.1em;
+}
+
+ul {
+    margin-block-start: 0px !important;
+    margin-block-end: 0px !important;
+    margin-bottom: 0px !important;
+    padding-inline-start: 0px !important;
+}
+
+/* Furniture card */
+
+div.custom-furniture-scrollbar {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+div.custom-furniture-scrollbar div {
+    display: inline-block;
+}
+
+.custom-variant-card {
+    cursor: pointer;
+}
+
+.custom-variant-image {
+    height: 5em;
+}
+
+.custom-variant-data {
+    width: 20ch;
+}
+
+.custom-variant-description {
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.8em;
+}
+
+.custom-variant-avaliation  {
+    max-width: 1.1em;
+}
+
+.custom-variant-more {
+    max-width: 1.5em;
+}
+
+.custom-variant-description, .custom-variant-coin, .custom-loader-text {
+    color: var(--color-mediummgray);
+}
+
+.custom-variant-price {
+    color: var(--color-highgray);
+    font-weight: bold;
+}
+
+.custom-bottom-icon {
+    max-height: 1.4em;
+}
+
+/* Canvas room */
+
+.custom-scene {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    cursor: all-scroll;
+}
+
+.custom-scene, .custom-scene:active, .custom-scene:hover {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+/* Furniture options */
+
+.custom-clear-furniture {
+    color: var(--color-white);
+    cursor: pointer;
+    z-index: 3;
+    font-weight: bold;
+    position: absolute;
+    bottom: 11em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    transition: .34s all;
+}
+
+/* Options modal */
+
+.modal-header, .modal-footer {
+    border: none !important;
+}
+
+.custom-modal-button {
+    cursor: pointer;
+}
+
+.custom-modal-icon {
+    max-height: 2.2em;
+}
+
+.custom-modal-title {
+    width: 79% !important;
+    color: var(--color-mediummgray);
+}
+
+.img-fluid {
+    max-width: 95% !important;
+}
+
+.modal-body {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.custom-modal-option-button {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--color-blue);
+    cursor: pointer;
+    text-align: center;
+}
+
+.modal-close-button {
+    position: absolute;
+    right: 1em;
+}
+
+.modal-header .close {
+    margin: none !important;
+}
+
+/* Loader*/
+.custom-main-loader {
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    z-index:2; 
+    background-color: var(--color-white);
+    display: flex;
+}
+
+.custom-main-loader-color {
+    color: var(--color-orange);
+}
+
+.custom-generic-loader {
+    z-index: 5; 
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    color: var(--color-white); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.custom-furniture-scrollbar::-webkit-scrollbar {
+    height: 10px;
+}
+
+.custom-furniture-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.custom-furniture-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-orange); 
+}
+
+.custom-furniture-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-xlowgray); 
+}
+
+/* Funriture more info */
+
+.custom-modal-info-title {
+    color: var(--color-highgray);
+}
+
+.custom-more-info-favorite {
+    max-width: 1.2em;
+    margin-top: 4px;
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+
+.custom-more-info-coin {
+    font-size: 17px;
+    color: var(--color-mediummgray);
+}
+
+.custom-more-info-cost {
+    font-size: 24px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.custom-more-info-header {
+    font-size: 19px;
+    margin-top: 26px;
+}
+
+table tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 6px 12px;
+}
+
+table .custom-more-info-filledline {
+    background: var(--color-xlowgray);
+    border-radius: 5px;
+}
+
+tr .custom-more-info-item {
+    font-weight: bold;
+    color: var(--color-highgray);
+}
+
+tr .custom-more-info-value {
+    color: var(--color-highgray);
+}
+
+.custom-more-info-buttons {
+    margin-top: 18px;
+}
+
+.custom-more-info-add {
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+    background: var(--color-white);
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px 0;
+    vertical-align: center;
+    cursor: pointer;
+    height: 80%;
+}
+
+.custom-more-info-add-icon {
+    max-width: 1rem;
+    margin-bottom: 2px;
+}
+
+.custom-more-info-buy {
+    background: var(--color-orange);
+    color: var(--color-white);
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px 0;
+    cursor: pointer;
+    height: 80%;
+    vertical-align: center;
+}
+
+.custom-more-info-right {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+}
+
+.custom-more-info-fill {
+    height: -webkit-fill-available;
+}
